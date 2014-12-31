@@ -71,13 +71,10 @@ var projects = {
     ]
 }
 
-/*
-function inName(nameString) {
-	locNameArray = nameString.split(" ");
-	locNameArray[1].toUpperCase();
-	return locNameArray[0] + ' ' + locNameArray[1];
+var inName = function(name) {
+	locNameArray = name.split(" ");
+	return locNameArray[0] + ' ' + locNameArray[1].toUpperCase();
 }
-*/
 
 function appendSkills(value, index, ar) {
 	var formattedSkill = HTMLskills.replace('%data%', value);
