@@ -2,6 +2,7 @@ var bio = {
     "name": "Hiro Protagonist",
     "role": "CIC stringer",
     "welcomeMessage": "",
+    "city" : "Los Angeles",
     "contacts": {
         "mobile": "970-618-5370",
         "email": "hiro@blacksun.org",
@@ -15,8 +16,6 @@ var bio = {
         "Music Promoter"
     ]
 }
-
-bio["city"] = "Los Angeles";
 
 var work = {
     "jobs": [
@@ -71,22 +70,35 @@ var projects = {
     ]
 }
 
+/* helper functions */
+
+/* This is related to the Internationalize Button which must be appended (uncommented) for this function to do anything.
 var inName = function(name) {
 	locNameArray = name.split(" ");
 	return locNameArray[0] + ' ' + locNameArray[1].toUpperCase();
 }
+*/
 
-function appendSkills(value, index, ar) {
-	var formattedSkill = HTMLskills.replace('%data%', value);
-	$("#skills").append(formattedSkill);
+/* display functions */
+
+bio.display = function() {
+	var formattedName = HTMLheaderName.replace('%data%', bio.name);
+	var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
+	$("#header").prepend(formattedRole);
+	$("#header").prepend(formattedName);
+	
+	function appendSkills(value, index, ar) {
+		var formattedSkill = HTMLskills.replace('%data%', value);
+		$("#skills").append(formattedSkill);
+	}
+	
+	if (bio.skills.length > 0) {
+		$("#header").append(HTMLskillsStart);
+		bio.skills.forEach(appendSkills);
+	}
 }
 
-if (bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
-	bio.skills.forEach(appendSkills);
-}
-
-function displayWork () {
+work.display = function() {
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer);
@@ -98,14 +110,10 @@ function displayWork () {
 	}
 }
 
-displayWork();
 
-var formattedName = HTMLheaderName.replace('%data%', bio.name);
-var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
+bio.display();
+work.display();
 
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#main").append(internationalizeButton);
+//$("#main").append(internationalizeButton);
 
 
