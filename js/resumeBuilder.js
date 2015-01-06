@@ -59,13 +59,13 @@ var projects = {
             "title": "Sword Fighting Algorithm",
             "dates": "Jan. 20, 2015 - Feb. 8, 2015",
             "description": "Create a sword fighting program for avatars within the metaverse to duel.",
-            "images": []
+            "images": ['http://fpoimg.com/200x200?text=image1', 'http://fpoimg.com/200x200?text=image2']
         },
         {
             "title": "Undertaker Daemon",
-            "dates": "",
+            "dates": "Jan. 20, 2015 - Feb. 8, 2015",
             "description": "In order to clear \"dead\" avatars from the Black Sun and allow them to regenerate, created undertaker Daemons.",
-            "images": []
+            "images": ['http://fpoimg.com/200x200?text=image3', 'http://fpoimg.com/200x200?text=image4']
         }
     ]
 }
@@ -110,9 +110,25 @@ work.display = function() {
 	}
 }
 
+projects.display = function() {
+	for (project in projects.projects) {
+		$("#projects").append(HTMLprojectStart);
+		var formattedProjectTitle = HTMLprojectTitle.replace('%data%', projects.projects[project].title);
+		var formattedProjectDates = HTMLprojectDates.replace('%data%', projects.projects[project].dates);
+		var formattedProjectDescription = HTMLprojectDescription.replace('%data%', projects.projects[project].description);
+		var formattedProjectImages = '';
+		for (image in projects.projects[project].images) {
+			var img = HTMLprojectImage.replace('%data%', projects.projects[project].images[image]);
+			formattedProjectImages += img;
+		}
+		$(".project-entry:last").append(formattedProjectTitle + formattedProjectDates + formattedProjectDescription + formattedProjectImages);
+	
+	}
+}
 
 bio.display();
 work.display();
+projects.display();
 
 //$("#main").append(internationalizeButton);
 
