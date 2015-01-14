@@ -1,7 +1,8 @@
 var bio = {
     "name": "Hiro Protagonist",
     "role": "CIC stringer",
-    "welcomeMessage": "",
+    "welcomeMessage": "Stop Snow Crash from infecting all hackers and destroying the metaverse.",
+    "bioPic": "http://fpoimg.com/200x200?text=bioPic",
     "city" : "Los Angeles",
     "contacts": {
         "mobile": "970-618-5370",
@@ -87,6 +88,19 @@ bio.display = function() {
 	$("#header").prepend(formattedRole);
 	$("#header").prepend(formattedName);
 	
+	var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+	$("#topContacts").append(formattedMobile);
+	var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
+	$("#topContacts").append(formattedEmail);
+	var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
+	$("#topContacts").append(formattedTwitter);
+	var formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
+	$("#topContacts").append(formattedGithub);
+	var formattedWelcomeMessage = HTMLWelcomeMsg.replace('%data%', bio.welcomeMessage);
+	$("#topContacts").append(formattedWelcomeMessage);
+	var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
+	$("#topContacts").append(formattedBioPic);
+		
 	function appendSkills(value, index, ar) {
 		var formattedSkill = HTMLskills.replace('%data%', value);
 		$("#skills").append(formattedSkill);
@@ -110,16 +124,29 @@ work.display = function() {
 	}
 }
 
+education.display = function () {
+	for (school in education.schools) {
+		$("#education").append(HTMLschoolStart);
+		var formattedName = HTMLschoolName.replace('%data%', education.schools[school].name);
+		var formattedLocation = HTMLschoolLocation.replace('%data%', education.schools[school].city);
+		var formattedDegree = HTMLschoolDegree.replace('%data%', education.schools[school].degree);
+		var formattedMajor = HTMLschoolMajor.replace('%data%', education.schools[school].major);
+		$(".education-entry:last").append(formattedName  + formattedLocation + formattedDegree + formattedMajor);
+	}
+}
+
 projects.display = function() {
 	for (project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
 		var formattedProjectTitle = HTMLprojectTitle.replace('%data%', projects.projects[project].title);
 		var formattedProjectDates = HTMLprojectDates.replace('%data%', projects.projects[project].dates);
 		var formattedProjectDescription = HTMLprojectDescription.replace('%data%', projects.projects[project].description);
-		var formattedProjectImages = '';
-		for (image in projects.projects[project].images) {
-			var img = HTMLprojectImage.replace('%data%', projects.projects[project].images[image]);
-			formattedProjectImages += img;
+		if (projects.projects[project].images.length > 0) {
+			var formattedProjectImages = '';
+			for (image in projects.projects[project].images) {
+				var img = HTMLprojectImage.replace('%data%', projects.projects[project].images[image]);
+				formattedProjectImages += img;
+			}
 		}
 		$(".project-entry:last").append(formattedProjectTitle + formattedProjectDates + formattedProjectDescription + formattedProjectImages);
 	
@@ -128,7 +155,9 @@ projects.display = function() {
 
 bio.display();
 work.display();
+education.display();
 projects.display();
+$("#mapDiv").append(googleMap);
 
 //$("#main").append(internationalizeButton);
 
