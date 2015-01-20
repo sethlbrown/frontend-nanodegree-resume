@@ -91,6 +91,10 @@ a {
   display: none;
 }
 
+#skills li {
+  display: block;
+}
+
 .orange {
   background-color: #F5AE23;
 }
