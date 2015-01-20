@@ -8,7 +8,8 @@ var bio = {
         "mobile": "970-618-5370",
         "email": "hiro@blacksun.org",
         "github": "hiro",
-        "twitter": "@hiroprotagonist"
+        "twitter": "@hiroprotagonist",
+        "location": "Los Angeles"
     },
     "skills": [
         "Swordsmanship",
@@ -41,15 +42,19 @@ var education = {
     "schools": [
         {
             "name": "Colorado Rocky Mountain School",
-            "city": "Carbondale, CO",
+            "location": "Carbondale, CO",
             "degree": "High School Diploma",
-            "major": ""
+            "major": "",
+            "dates": "1991",
+            "url": "http://www.crms.org"
         },
         {
             "name": "Colorado College",
-            "city": "Colorado Springs",
+            "location": "Colorado Springs",
             "degree": "BA",
-            "major": "English"
+            "major": "English",
+            "dates": "1995",
+            "url": "http://www.coloradocollege.edu"
         }
     ]
 }
@@ -60,25 +65,16 @@ var projects = {
             "title": "Sword Fighting Algorithm",
             "dates": "Jan. 20, 2015 - Feb. 8, 2015",
             "description": "Create a sword fighting program for avatars within the metaverse to duel.",
-            "images": ['http://fpoimg.com/200x200?text=image1', 'http://fpoimg.com/200x200?text=image2']
+            "images": ["http://fpoimg.com/200x200?text=image1", "http://fpoimg.com/200x200?text=image2"]
         },
         {
             "title": "Undertaker Daemon",
             "dates": "Jan. 20, 2015 - Feb. 8, 2015",
             "description": "In order to clear \"dead\" avatars from the Black Sun and allow them to regenerate, created undertaker Daemons.",
-            "images": ['http://fpoimg.com/200x200?text=image3', 'http://fpoimg.com/200x200?text=image4']
+            "images": ["http://fpoimg.com/200x200?text=image3", "http://fpoimg.com/200x200?text=image4"]
         }
     ]
 }
-
-/* helper functions */
-
-/* This is related to the Internationalize Button which must be appended (uncommented) for this function to do anything.
-var inName = function(name) {
-	locNameArray = name.split(" ");
-	return locNameArray[0] + ' ' + locNameArray[1].toUpperCase();
-}
-*/
 
 /* display functions */
 
@@ -89,18 +85,18 @@ bio.display = function() {
 	$("#header").prepend(formattedName);
 	
 	var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
-	$("#topContacts").append(formattedMobile);
 	var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
-	$("#topContacts").append(formattedEmail);
 	var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
-	$("#topContacts").append(formattedTwitter);
 	var formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
-	$("#topContacts").append(formattedGithub);
-	var formattedWelcomeMessage = HTMLWelcomeMsg.replace('%data%', bio.welcomeMessage);
-	$("#topContacts").append(formattedWelcomeMessage);
+	var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);	
+	var contact = formattedMobile + formattedEmail + formattedTwitter + formattedGithub + formattedLocation;
+	$("#topContacts").append(contact);
+	$("#footerContacts").append(contact);	
 	var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
-	$("#topContacts").append(formattedBioPic);
-		
+	$(formattedBioPic).insertAfter("#topContacts");
+	var formattedWelcomeMessage = HTMLWelcomeMsg.replace('%data%', bio.welcomeMessage);
+	$(formattedWelcomeMessage).insertAfter(".biopic");	
+	
 	function appendSkills(value, index, ar) {
 		var formattedSkill = HTMLskills.replace('%data%', value);
 		$("#skills").append(formattedSkill);
@@ -128,10 +124,14 @@ education.display = function () {
 	for (school in education.schools) {
 		$("#education").append(HTMLschoolStart);
 		var formattedName = HTMLschoolName.replace('%data%', education.schools[school].name);
-		var formattedLocation = HTMLschoolLocation.replace('%data%', education.schools[school].city);
 		var formattedDegree = HTMLschoolDegree.replace('%data%', education.schools[school].degree);
-		var formattedMajor = HTMLschoolMajor.replace('%data%', education.schools[school].major);
-		$(".education-entry:last").append(formattedName  + formattedLocation + formattedDegree + formattedMajor);
+		var formattedDates = HTMLschoolDates.replace('%data%', education.schools[school].dates);
+		var formattedLocation = HTMLschoolLocation.replace('%data%', education.schools[school].location);
+		var formattedMajor = '&nbsp;';
+		if(education.schools[school].major) {
+			var formattedMajor = HTMLschoolMajor.replace('%data%', education.schools[school].major);
+		}
+		$(".education-entry:last").append(formattedName  + formattedDegree + formattedDates + formattedLocation + formattedMajor);
 	}
 }
 
@@ -157,8 +157,8 @@ bio.display();
 work.display();
 education.display();
 projects.display();
-$("#mapDiv").append(googleMap);
 
+$("#mapDiv").append(googleMap);
 //$("#main").append(internationalizeButton);
 
 
