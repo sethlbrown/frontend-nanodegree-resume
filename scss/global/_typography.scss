@@ -1,0 +1,54 @@
+html {
+  font-size: 125%; // creates 20px default font size
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: $sans-serif;
+  line-height: 1.5;
+  color: $text-normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  color: $text-dark;
+  margin: 0 0 1em 0;
+}
+
+p,
+ul {
+  margin: 1em 0;
+}
+
+a {
+  color: $red;
+  text-decoration: none;
+  &:hover {
+    color: $text-dark;
+  }
+  @media screen and (max-width: $medium) {
+    word-wrap: break-word;
+  }
+}
+
+
+//////////////////////
+// Highlight Colors //
+//////////////////////
+
+::selection {
+  background: $red;
+  color: white;
+}
+
+::-moz-selection {
+  background: $red;
+  color: white;
+}
+
+::-webkit-selection {
+  background: $red;
+  color: white;
+}
+
+
