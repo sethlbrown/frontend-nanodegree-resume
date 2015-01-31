@@ -33,18 +33,38 @@ ul {
     padding-left: 10px;
   }
   
+  span:nth-child(3) {
+  	color: $red;
+  	font-size: .75em;
+  }
+  
   .biopic {
     border: 3px solid $gray-light;
-    margin: 0 10px;
+    margin: 0 auto;
   }
   
   
-  #topContacts {
+  #topContacts, #skills {
 
     @media screen and (max-width: $mobile+1) {
       display: block;
     }
+    
+
   }
   
+  .welcome-message {
+  
+    font-style: italic;
+    color: white !important;
+    display: block;
+    padding: 1em;
+    background: $red;
+    @include ribbon(darken(red, 30%), 1em, 0);
+    width: 100%;
+    margin-left: -5%;
 
+
+  }
+  
 }

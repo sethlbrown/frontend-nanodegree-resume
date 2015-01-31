@@ -81,7 +81,9 @@ var projects = {
 bio.display = function() {
 	var formattedName = HTMLheaderName.replace('%data%', bio.name);
 	var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
-	$("#header").prepend(formattedRole);
+	var formattedWelcomeMessage = HTMLWelcomeMsg.replace('%data%', '<div class="ribbon-wrap"><em><strong>Objective: </strong>' + bio.welcomeMessage + '</em></div>');
+	//$("#header").prepend(formattedRole);
+    $("#header").prepend(formattedWelcomeMessage);
 	$("#header").prepend(formattedName);
 	
 	var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
@@ -93,9 +95,7 @@ bio.display = function() {
 	$("#topContacts").append(contact);
 	$("#footerContacts").append(contact);	
 	var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
-	$(formattedBioPic).insertAfter("#topContacts");
-	var formattedWelcomeMessage = HTMLWelcomeMsg.replace('%data%', bio.welcomeMessage);
-	$(formattedWelcomeMessage).insertAfter(".biopic");	
+	$(formattedBioPic).insertAfter("#topContacts");	
 	
 	function appendSkills(value, index, ar) {
 		var formattedSkill = HTMLskills.replace('%data%', value);
