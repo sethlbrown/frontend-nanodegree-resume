@@ -1,52 +1,6 @@
-@import 'vendor/_normalize.scss';
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-* {
-  background-color: black;
-  color: white;
-}
-
-#header {
-
-	background: url('../images/bg_image.jpg') no-repeat left top;
-	
-	#name {
-	  font-family: arvo;
-	  text-transform: uppercase;
-	  display: inline;
-	}
-	
-	span {
-	  margin-left: 20px;	
-	}
-/*	
-	.flex-box {
-	  display: -webkit-flex;
-	  display: flex;
-	  flex-direction: row;
-	  flex-wrap: wrap;
-	  justify-content: space-around;
-	}
-*/	
-	ul {
-	  list-style-type: none;
-	}
-	
-	.center-content {
-  		padding-top: 2.5%;
-  		padding-left: 5%;
-  		padding-right: 5%;
-  		padding-bottom: 2.5%
-	}
-
-	.biopic {
-	  float: left;
-	  padding: 10px;
-	  width: 200px;
-	}
-	
-	img {
-	  padding: 10px;
-	}
-	
-}
-
+@import "compass/reset";
