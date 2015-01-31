@@ -1,0 +1,50 @@
+.flex-box {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 1em;
+}
+
+.center-content {
+  padding-top: 2.5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2.5%
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+#header {
+  @include clearfix;
+
+  h1 {
+    font-family: $serif;
+    border-top: 3px solid $gray-light;
+    border-bottom: 3px solid $gray-light;
+  }
+  
+  span:nth-child(2) {
+    color: $red;
+    padding-left: 10px;
+  }
+  
+  .biopic {
+    border: 3px solid $gray-light;
+    margin: 0 10px;
+  }
+  
+  
+  #topContacts {
+
+    @media screen and (max-width: $mobile+1) {
+      display: block;
+    }
+  }
+  
+
+}

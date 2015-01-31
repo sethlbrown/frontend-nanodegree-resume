@@ -7,6 +7,7 @@
 
 // Base Vendor Imports
 @import "vendor/normalize";
+@import "vendor/mixins";
 
 // Variables Import
 @import "variables/colors";
@@ -22,3 +23,10 @@
 @import "page/body";
 @import "page/html";
 @import "page/main";
+
+// Layout Imports
+@import "layout/layout_content";
+@import "layout/layout_default";
+
+// Component Imports
+@import "components/_header.scss";

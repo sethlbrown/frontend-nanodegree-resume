@@ -1,0 +1,13 @@
+// See /variables/_sizes.scss for default grid variables
+body {
+  padding: 0;
+}
+
+#main {
+  margin: 0;
+  padding: 0;
+  @include clearfix;
+  @media screen and (min-width: $medium) {
+    margin: 2em $gutter 0 $gutter;
+  }
+}

@@ -1,0 +1,25 @@
+// See /variables/_sizes.scss for default grid variables
+
+.content-wrapper {
+  float: left;
+  width: 100%;
+  padding: $gutter;
+  margin: 0;
+  @media screen and (min-width: $medium) {
+    padding: $gutter * 2;
+    margin: 0;
+  }
+  @media screen and (min-width: $large) {
+    width: 63%;
+    padding: $gutter * 2 0;
+  }
+  .content {
+    padding: 0 0 4em 0;
+    @media screen and (min-width: $large) {
+      padding: 2em 0 4em 0;
+      width: 77.551020408163%;
+      float: right;
+      max-width: 570px;
+    }
+  }
+}
