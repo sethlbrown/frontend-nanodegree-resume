@@ -44,7 +44,7 @@ var education = {
             "name": "Colorado Rocky Mountain School",
             "location": "Carbondale, CO",
             "degree": "High School Diploma",
-            "major": "",
+            "major": "American Literature",
             "dates": "1991",
             "url": "http://www.crms.org"
         },
@@ -82,7 +82,6 @@ bio.display = function() {
 	var formattedName = HTMLheaderName.replace('%data%', bio.name);
 	var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
 	var formattedWelcomeMessage = HTMLWelcomeMsg.replace('%data%', '<div class="ribbon-wrap"><em><strong>Objective: </strong>' + bio.welcomeMessage + '</em></div>');
-	//$("#header").prepend(formattedRole);
     $("#header").prepend(formattedWelcomeMessage);
 	$("#header").prepend(formattedName);
 	

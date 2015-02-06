@@ -12,7 +12,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   color: $text-dark;
-  margin: 0 0 .5em 0;
+  margin: .5em 0;
 }
 
 p,
@@ -31,6 +31,13 @@ a {
   }
 }
 
+.white-text {
+  color: $red;
+}
+
+#skills .white-text {
+  color: $text-normal;
+}
 
 //////////////////////
 // Highlight Colors //

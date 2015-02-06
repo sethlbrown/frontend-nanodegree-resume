@@ -1,8 +1,20 @@
-#main {
-  background: white;
-}
+// See /variables/_sizes.scss for default grid variables
 
-.education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
+#main {  
+  margin: 0;
+  width: 100%;
+  @include flexible-layout;
+  @include clearfix;
+  padding: 2.5% 5%;
+  background: white;
+
+  
+  @media screen and (min-width: $medium) {
+    margin: 2em auto 0 auto;
+  }
+  
+  @media screen and (min-width: $large) {
+    width: 960px;
+    
+  }
 }

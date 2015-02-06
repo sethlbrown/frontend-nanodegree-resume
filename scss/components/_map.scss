@@ -1,12 +1,12 @@
 #map {
   display: block;
   height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-right: 20px;
+  @include clearfix;
 }
 
 #mapDiv {
-  height: 400px;
+  height: 450px;
   width: 100%;
-  padding-bottom: 5%;
+  overflow: hidden;
 }

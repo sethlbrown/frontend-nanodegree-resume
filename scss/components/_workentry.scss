@@ -1,0 +1,37 @@
+#workExperience, #projects, #education {
+  width: 100%;
+  
+  img {
+    width: 100%;
+  }
+}
+
+.work-entry, .project-entry, .education-entry {
+  background-color: $gray-light;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 2.5%;
+  
+  @media screen and (min-width: $medium) {
+	  width: 47.5490196%;
+	  min-height: 200px;
+	  float: left;
+	  margin-right: $margin-right;
+	  margin-bottom: 0;
+  }
+  
+  p, .location-text {
+    color: $text-dark;
+  }
+  
+}
+
+.project-entry {
+  @media screen and (min-width: $medium) {
+  	min-height: 985px;
+ }
+  
+  p {
+    margin-bottom: 20px;
+  }
+}

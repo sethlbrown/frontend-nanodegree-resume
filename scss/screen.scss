@@ -7,7 +7,6 @@
 
 // Base Vendor Imports
 @import "vendor/normalize";
-@import "vendor/mixins";
 @import "vendor/ribbons";
 
 // Variables Import
@@ -25,10 +24,7 @@
 @import "page/html";
 @import "page/main";
 
-// Layout Imports
-@import "layout/layout_content";
-@import "layout/layout_default";
-
 // Component Imports
 @import "components/header";
 @import "components/map";
+@import "components/workentry";

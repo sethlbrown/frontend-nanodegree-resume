@@ -1,69 +1,66 @@
-.flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 0 1em;
-}
 
-.center-content {
-  padding-top: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2.5%
+@media screen and (min-width: $mobile) {
+	.flex-box {
+	  @include flexible-layout;
+	  flex-direction: row;
+	  justify-content: space-around;
+	  padding: 0 1em;
+	}
+	
+	ul {
+  		list-style-type: none;
+	}
 }
-
-ul {
-  list-style-type: none;
-}
-
 
 #header {
   @include clearfix;
 
   h1 {
     font-family: $serif;
-    border-top: 3px solid $gray-light;
-    border-bottom: 3px solid $gray-light;
   }
-  
-  span:nth-child(2) {
-    color: $red;
-    padding-left: 10px;
-  }
-  
-  span:nth-child(3) {
-  	color: $red;
-  	font-size: .75em;
-  }
-  
+ 
   .biopic {
-    border: 3px solid $gray-light;
-    margin: 0 auto;
+    padding-left: 20px;
+    width: 100%;
+    display: block;
+    @include border-rad(6em);
+    
+    @media screen and (min-width: $mobile) {
+      width: 26.9607843%;
+      float: left;
+    }
   }
   
-  
-  #topContacts, #skills {
-
-    @media screen and (max-width: $mobile+1) {
-      display: block;
-    }
+  #skillsBox {
+    display: block;
     
-
+    @media screen and (min-width: $mobile) {
+	  float: right;
+	  width: 73.0392157%;
+	  @include clearfix;
+	  
+	  #skillsH3 {
+	    padding-left: 1.6778523%;
+	  } 
+	}
+	
+ 
   }
   
   .welcome-message {
   
-    font-style: italic;
-    color: white !important;
-    display: block;
-    padding: 1em;
-    background: $red;
-    @include ribbon(darken(red, 30%), 1em, 0);
-    width: 100%;
-    margin-left: -5%;
-
+    .ribbon-wrap {
+	    font-style: italic;
+	    color: white !important;
+	    padding: 1em;
+	    background: $gray-dark;
+	    width: 100%; 
+    }
+      
+    @media screen and (min-width: $medium) {
+      @include ribbon(darken($gray-dark, 30%), 1em, 1em);
+      margin-left: -2.333333%;
+    }
 
   }
     

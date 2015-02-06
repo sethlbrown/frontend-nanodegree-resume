@@ -1,3 +1,26 @@
 @mixin hidden {
   display: none;
 }
+
+@mixin flexible-layout {
+  display: -webkit-flex; /*Safari */
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+@mixin border-rad ($foo: 1em) {
+	-webkit-border-radius: $foo;
+	-moz-border-radius: $foo;
+	border-radius: $foo;
+}
+
