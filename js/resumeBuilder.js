@@ -2,7 +2,7 @@ var bio = {
     "name": "Hiro Protagonist",
     "role": "CIC stringer",
     "welcomeMessage": "Stop Snow Crash from infecting all hackers and destroying the metaverse.",
-    "bioPic": "http://fpoimg.com/600x600",
+    "bioPic": "http://fpoimg.com/400x400",
     "city" : "Los Angeles",
     "contacts": {
         "mobile": "970-618-5370",
