@@ -2,7 +2,7 @@ var bio = {
     "name": "Hiro Protagonist",
     "role": "CIC stringer",
     "welcomeMessage": "Stop Snow Crash from infecting all hackers and destroying the metaverse.",
-    "bioPic": "http://fpoimg.com/200x200?text=bioPic",
+    "bioPic": "http://fpoimg.com/600x600?text='Responsive Image'",
     "city" : "Los Angeles",
     "contacts": {
         "mobile": "970-618-5370",
@@ -65,13 +65,13 @@ var projects = {
             "title": "Sword Fighting Algorithm",
             "dates": "Jan. 20, 2015 - Feb. 8, 2015",
             "description": "Create a sword fighting program for avatars within the metaverse to duel.",
-            "images": ["http://fpoimg.com/200x200?text=image1", "http://fpoimg.com/200x200?text=image2"]
+            "images": ["http://fpoimg.com/400x400?text=image1", "http://fpoimg.com/400x400?text=image2"]
         },
         {
             "title": "Undertaker Daemon",
             "dates": "Jan. 20, 2015 - Feb. 8, 2015",
             "description": "In order to clear \"dead\" avatars from the Black Sun and allow them to regenerate, created undertaker Daemons.",
-            "images": ["http://fpoimg.com/200x200?text=image3", "http://fpoimg.com/200x200?text=image4"]
+            "images": ["http://fpoimg.com/400x400?text=image3", "http://fpoimg.com/400x400?text=image4"]
         }
     ]
 }

@@ -22,8 +22,8 @@
   .biopic {
     padding-left: 20px;
     width: 100%;
+    height: auto;
     display: block;
-    @include border-rad(6em);
     
     @media screen and (min-width: $mobile) {
       width: 26.9607843%;
