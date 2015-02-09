@@ -17,13 +17,6 @@
   }
 }
 
-
-@mixin border-rad ($foo: 1em) {
-	-webkit-border-radius: $foo;
-	-moz-border-radius: $foo;
-	border-radius: $foo;
-}
-
 @mixin circle-photo($diameter) {
   width: $diameter;
   height: $diameter;
