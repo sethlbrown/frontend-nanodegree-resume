@@ -18,47 +18,44 @@
   h1 {
     font-family: $serif;
   }
- 
-  .biopic {
-    padding-left: $margin-right;
-    width: 100%;
-    height: auto;
-    display: block;
-   /* @include circle-photo(110); */
+  
+  .shader {
+	   display: block;
+	   position: relative;
+  }
 
-
-    
-    @media screen and (min-width: $mobile) {
-      width: 26.9607843%;
-      float: left;
-    }
+  .shader:before {
+	  @include border-radius(50%);
+	  box-shadow: inset 3px 3px 25px #000;
+	  content: "";
+	  height: 100%;
+	  position: absolute;
+	  width: 100%;
   }
   
-  #skillsBox {
+  .round {
+    @include border-radius(50%);
+  }
+ 
+  img {
     display: block;
+    max-width: 100%;
     
     @media screen and (min-width: $mobile) {
-	  float: right;
-	  width: 73.0392157%;
-	  @include clearfix;
-	  
-	  #skillsH3 {
-	    padding-left: 1.6778523%;
-	  } 
-	}
-	
- 
+      width: 26.6826923%; // 222px/832px  
+      float: left;
+    }
   }
   
   .welcome-message {
   
     .ribbon-wrap {
-        font-size: .85em;
-	    font-style: italic;
-	    color: white !important;
-	    padding: 1em;
-	    background: $gray-dark;
-	    width: 100%; 
+      font-size: .85em;
+	  font-style: italic;
+	  color: white;
+	  padding: 1em;
+	  background: $gray-dark;
+	  width: 100%; 
     }
       
     @media screen and (min-width: $medium) {
@@ -68,4 +65,18 @@
 
   }
     
+}
+
+#skillsBox {
+  display: block;
+
+	@media screen and (min-width: $mobile) {
+	  float: right;
+	  width: 72.3557692%; //602px/832px
+	  @include clearfix;
+	  
+	  #skillsH3 {
+	    padding-left: 1.6778523%;
+	  } 
+	}
 }
